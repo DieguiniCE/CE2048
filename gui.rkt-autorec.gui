@@ -60,10 +60,10 @@
     [(= value 16)   (make-object color% 245 149  99)] ; naranja
     [(= value 32)   (make-object color% 246 124  95)] ; salmon
     [(= value 64)   (make-object color% 246  94  59)] ; rojo-naranja
-    [(= value 128)  (make-object color% 222  49  99)] ; cerise
-    [(= value 256)  (make-object color% 220 20   60)] ; rojo carmesí
-    [(= value 512)  (make-object color% 244 187 255)] ; magenta
-    [(= value 1024) (make-object color% 200 175  85)] ; ámbar
+    [(= value 128)  (make-object color% 237 207 114)] ; amarillo dorado
+    [(= value 256)  (make-object color% 237 204  97)] ; amarillo
+    [(= value 512)  (make-object color% 237 200  80)] ; amarillo intenso
+    [(= value 1024) (make-object color% 237 197  63)] ; ámbar
     [(= value 2048) (make-object color% 237 194  46)] ; dorado
     [else           (make-object color%  60  58  50)])) ; > 2048 — casi negro
 
@@ -84,7 +84,7 @@
     [else            (max 14 (quotient (* currentTileSize 38) 100))]))
 
 ; dibuja un halo dorado alrededor de baldosas con valor >= 128
-(define (drawTileGlow dc value x y)
+#|(define (drawTileGlow dc value x y)
   (when (>= value 128)
     (send dc set-alpha 0.22)
     (send dc set-brush
@@ -95,7 +95,7 @@
           (- x 5) (- y 5)
           (+ currentTileSize 10) (+ currentTileSize 10) 12)
     (send dc set-alpha 1.0)))
-
+|#
 
 ; creacion de cuadros
 (define (drawSingleTile dc value row col)
